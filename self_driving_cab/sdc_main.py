@@ -17,7 +17,7 @@ env.step(action) - step the environment by one time-step. Returns:
 
 env.render() - renders one frame of the environment
 
-state env.encode(c1, c2, ..., cn) - returns a state using the specified coordinate values
+state = env.encode(c1, c2, ..., cn) - returns a state using the specified coordinate values
 
 
 
@@ -38,5 +38,11 @@ env.P[state_encoding] - returns the reward table associated with a given state
 
 if __name__ == "__main__":
     env = gym.make("Taxi-v3").env
-    frames = unlearned_walk(env)
-    print_frames(frames)
+    # q_learning(env)
+
+    q_table = np.load("self_driving_cab/saved_q_tables/q_learning_table.npy")
+
+    # evaluate_agent(env, q_table)
+
+    state = env.encode(3, 1, 2, 0)
+    run_agent(env, q_table, state)
