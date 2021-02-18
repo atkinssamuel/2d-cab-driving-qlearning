@@ -1,4 +1,4 @@
-# python-rl-application
+# 2D Self-Driving Cab Q-Learning Project
 ## Conda Environment Setup
 **Create environment from environment.yml**:  
 *From base directory:*  
