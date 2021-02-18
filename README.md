@@ -34,3 +34,19 @@ The agent has 6 possible actions:
 4. Drive west one square
 5. Pickup
 6. Drop-off
+
+### Algorithm
+The algorithm that will be implemented is a simple Q-learning algorithm. This algorithm was chosen because the state space is small enough such that function approximators are not needed for the entries in the Q-table. 
+
+The Q-learning algorithm updates the entries in the Q-table using a simple update equation:
+
+```python
+new_value = (1 - alpha) * old_value + alpha * (reward + gamma * next_max)
+```
+
+The hyper-paremeters alpha and gamma are pre-determined values that we set prior to running our algorithm. The ```old_value``` is the old Q-value given a particular state-action coordinate in the Q-table and the ```next_max``` is the maximum Q-value extracted from the row corresponding to the next state. Using this update equation, the Q-table, which approximates the utility of actions given states, will become more and more accurate. 
+
+With respect to exploration and exploitation, we use a non-decaying epsilon value to balance exploration and exploitation. A more sophisticated strategy would decay epsilon as the Q-table became more accurate because a more accurate Q-table should exploit its knowledge more frequently.
+
+### Conclusion
+This project was a simple RL application that provided me with the fundamentals to explore more complex RL frameworks and applications. 

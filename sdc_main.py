@@ -40,7 +40,7 @@ if __name__ == "__main__":
     env = gym.make("Taxi-v3").env
     # q_learning(env)
 
-    q_table = np.load("self_driving_cab/saved_q_tables/q_learning_table.npy")
+    q_table = np.load("saved_q_tables/q_learning_table.npy")
 
     # evaluate_agent(env, q_table)
 

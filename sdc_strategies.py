@@ -81,5 +81,5 @@ def q_learning(env):
 
     print("Training finished.\n")
 
-    with open("self_driving_cab/saved_q_tables/q_learning_table.npy", "wb") as q_learning_result_file:
+    with open("saved_q_tables/q_learning_table.npy", "wb") as q_learning_result_file:
         np.save(q_learning_result_file, q_table)
